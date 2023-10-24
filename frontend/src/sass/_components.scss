@@ -1,0 +1,396 @@
+////////////////////////////////////////
+// LOGO
+.logo {
+    height: 3.25rem;
+    margin-left: 2rem;
+    width: 20%;
+}
+
+
+////////////////////////////////////////
+// SEARCH
+.search {
+    flex: 0 0 40%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+        background-color: var(--color-grey-light-2);
+    }
+
+    &__input {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: var(--color-grey-light-2);
+        border: none;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        width: 50%;
+        transition: all .2s;
+        margin-right: -3.25rem;
+
+        &:focus {
+            outline: none;
+            width: 80%;
+            background-color: var(--color-grey-light-3);
+        }
+
+        &::-webkit-input-placeholder {
+            font-weight: 100;
+            color: var(--color-grey-light-4);
+        }
+    }
+
+    &__input:focus + &__button {
+        background-color: var(--color-grey-light-3);
+    }
+
+    &__button {
+        border: none;
+        background-color: var(--color-grey-light-2);
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            transform: translateY(2px);
+        }
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        fill: var(--color-grey-dark-3);
+    }
+}
+
+
+////////////////////////////////////////
+// USER NAVIGATION
+.user-nav {
+    align-self: stretch;
+    
+    display: flex;
+    align-items: center;
+
+    & > * {
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    & > *:hover {
+        background-color: var(--color-grey-light-2);
+    }
+
+    &__icon-box {
+        position: relative;
+    }
+
+    &__icon {
+        height: 2.25rem;
+        width: 2.25rem;
+        fill: var(--color-primary-light);
+    }
+
+    &__notification {
+        font-size: .8rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
+        background-color: var(--color-primary-dark);
+        color: red;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.1rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__user-photo {
+        height: 3.75rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+
+}
+
+
+
+////////////////////////////////////////
+// SIDE NAVIGATION
+.side-nav {
+    font-size: 1.4rem;
+    list-style: none;
+    
+    
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin: 0;
+    }
+
+    &__item {
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+
+            @media only screen and (max-width: $bp-medium) {
+                margin: 0;
+            }
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1;
+        }
+    }
+
+    
+    &__link:link,
+    &__link:visited {
+        color: var(--color-grey-light-1);
+        text-decoration: none;
+        text-transform: uppercase;
+        display: block;
+        padding: 1.5rem 3rem;
+        position: relative;
+        z-index: 10;
+
+        display: flex;
+        align-items: center;
+
+        @media only screen and (max-width: $bp-medium) {
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: column;
+            padding: 1.5rem .5rem;
+        }
+    }
+    &__item:hover,
+    &__item--active {
+        background-color: white;
+        .side-nav__link {
+            color: var(--color-primary-light);
+        }
+    }
+
+    &__icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-right: 2rem;
+        fill: currentColor;
+
+        @media only screen and (max-width: $bp-small) {
+            margin-right: 0;
+            margin-bottom: .7rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}
+
+.sidebar-logo {
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 5rem;
+    font-weight: normal;
+    font-family: sans-serif;
+
+    @media only screen and (max-width: $bp-medium) {
+
+       font-size: 3rem;
+    }
+}
+////////////////////////////////////////
+// ANNOUNCEMENT
+.announcements-container {
+    min-width: 90rem;
+    .announcements-header{
+        font: 3rem sans-serif ;
+    }
+
+    .announcements-subheader {
+        font: 1em sans-serif;
+    }
+
+    height: fit-content;
+
+    @media only screen and (max-width: $bp-small) {
+        min-width: 100%;
+    }
+}
+
+.announcement {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+    .user-avatar {
+        margin-right: 10px;
+
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+
+            @media only screen and (max-width: $bp-small) {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    .user-info {
+        .user-name {
+            font-weight: bold;
+        }
+
+        .separator {
+            margin: 0 10px;
+            border-left: 1px solid ;
+            height: 4rem;
+
+            @media only screen and (max-width: $bp-small) {
+                height: 3rem;
+            }
+        }
+    }
+
+    .announcement-text {
+        font-size: 16px;
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 14px;
+        }
+    }
+}
+
+// /////
+// CARD
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 10px;
+    height: fit-content;
+}
+
+/////////////
+/// QUIZLIST
+.quiz-list {
+   width: 30rem;
+   @media only screen and (max-width: $bp-small) {
+        width: 100%;
+    }
+    .quiz-details {
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .quiz-name {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.6rem;
+        }
+    }
+    .quiz-category {
+        font-size: 1.2rem;
+        font-weight: lighter;
+        margin-bottom: 1rem;
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1rem;
+        }
+    }
+    .quiz-description {
+        font-size: 1.2rem;
+        font-weight: lighter;
+        margin-bottom: 1rem;
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1rem;
+        }
+    }
+    .start-quiz-button {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        margin: 2rem 0rem;
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #55bcf8;
+        background-color: white;
+        cursor: pointer;
+        transition: all .2s;
+        &:hover {
+            color: #3C8399;
+        }
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1rem;
+            padding: 0.8rem 1.6rem;
+        }
+    }
+}
+//////
+//HEADER 
+/////
+
+  .primary-card h1 {
+    
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .primary-card p {
+    color: #666;
+    font-size: 1.5rem;
+  }
+  
+  .primary-card qoute {
+    color: #999;
+    font-size: 1rem;
+  }
+  
+  .primary-card button {
+    margin-top: 2rem;
+    background-color:#4CCCBE;
+    padding: 1rem 3rem;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .primary-card button:hover {
+    background-color: #0069d9;
+  }
+  
+  .primary-card button:active {
+    background-color: #0062cc;
+  }
+  
+  .primary-card button:focus {
+    outline: none;
+  }
+
+  .hello-header {
+    font-size: 1.2rem;
+    padding: 2rem;
+    @media screen and (min-width:$bp-medium) {
+        font-size: 2rem;
+    }
+  }
